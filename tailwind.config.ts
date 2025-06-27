@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,15 +53,15 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				// Origami-inspired colors
+				origami: {
+					cream: '#FAF7F0',
+					sakura: '#FFB7C5',
+					sage: '#9CAF88',
+					sky: '#B8E6FF',
+					paper: '#F8F6F0',
+					fold: '#E8E2D5',
+					shadow: '#D6D0C4'
 				}
 			},
 			borderRadius: {
@@ -84,11 +85,44 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'paper-unfold': {
+					'0%': {
+						transform: 'rotateX(90deg) scale(0.8)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'rotateX(0deg) scale(1)',
+						opacity: '1'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'fold': {
+					'0%': {
+						transform: 'rotateY(0deg)'
+					},
+					'100%': {
+						transform: 'rotateY(180deg)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'paper-unfold': 'paper-unfold 0.6s ease-out',
+				'float': 'float 3s ease-in-out infinite',
+				'fold': 'fold 0.6s ease-in-out'
+			},
+			backgroundImage: {
+				'paper-texture': 'linear-gradient(45deg, #faf7f0 25%, transparent 25%), linear-gradient(-45deg, #faf7f0 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #faf7f0 75%), linear-gradient(-45deg, transparent 75%, #faf7f0 75%)',
+				'origami-gradient': 'linear-gradient(135deg, #FFB7C5 0%, #B8E6FF 50%, #9CAF88 100%)'
 			}
 		}
 	},
