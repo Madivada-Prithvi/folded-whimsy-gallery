@@ -9,6 +9,7 @@ const Navigation = () => {
   const location = useLocation();
 
   const navItems = [
+    { name: 'Home', path: '/home' },
     { name: 'Shop', path: '/shop' },
     { name: 'Learn', path: '/learn' },
     { name: 'Community', path: '/community' },
@@ -21,7 +22,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
+          <Link to="/home" className="flex items-center space-x-2 group">
             <div className="w-8 h-8 bg-gradient-to-br from-origami-sakura to-origami-sage rounded-lg rotate-45 transform group-hover:rotate-90 transition-transform duration-300"></div>
             <span className="text-xl font-semibold bg-gradient-to-r from-origami-sage to-origami-sky bg-clip-text text-transparent">
               Folded Whimsy

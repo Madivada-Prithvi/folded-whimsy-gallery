@@ -5,47 +5,47 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Heart, Star, Filter, Search, Grid, List, ShoppingCart } from 'lucide-react';
+import { Heart, Star, Filter, Search, Grid, List, ShoppingCart, IndianRupee } from 'lucide-react';
 
 const Shop = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedMood, setSelectedMood] = useState('all');
 
-  const categories = ['all', 'cranes', 'flowers', 'animals', 'geometric', 'seasonal'];
-  const moods = ['all', 'calming', 'romantic', 'artistic', 'zen', 'playful'];
+  const categories = ['all', 'cranes', 'flowers', 'animals', 'geometric', 'seasonal', 'traditional'];
+  const moods = ['all', 'calming', 'romantic', 'artistic', 'zen', 'playful', 'festive'];
 
   const products = [
     {
       id: 1,
-      name: 'Serenity Garden Set',
-      price: 89,
-      originalPrice: 120,
-      image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=400&h=400&fit=crop',
+      name: 'Lotus Serenity Set',
+      price: 2499,
+      originalPrice: 3200,
+      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop',
       category: 'flowers',
       mood: 'calming',
       rating: 4.9,
       reviews: 234,
-      description: 'Handfolded lotus and lily collection that brings tranquil energy to any space',
+      description: 'Handfolded pink lotus collection symbolizing purity and enlightenment',
       inStock: true
     },
     {
       id: 2,
-      name: 'Romantic Cranes',
-      price: 156,
-      image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=400&fit=crop',
+      name: 'Golden Paper Cranes',
+      price: 4299,
+      image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop',
       category: 'cranes',
       mood: 'romantic',
       rating: 5.0,
       reviews: 156,
-      description: 'Pair of golden paper cranes symbolizing eternal love and commitment',
+      description: 'Pair of golden cranes representing eternal love and good fortune',
       inStock: true
     },
     {
       id: 3,
-      name: 'Sakura Dreams',
-      price: 67,
-      image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=400&h=400&fit=crop',
+      name: 'Sakura Blossom Dreams',
+      price: 1899,
+      image: 'https://images.unsplash.com/photo-1486718448742-163732cd1544?w=400&h=400&fit=crop',
       category: 'seasonal',
       mood: 'artistic',
       rating: 4.8,
@@ -55,9 +55,9 @@ const Shop = () => {
     },
     {
       id: 4,
-      name: 'Mountain Meditation',
-      price: 134,
-      image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=400&fit=crop',
+      name: 'Zen Mountain Landscape',
+      price: 3799,
+      image: 'https://images.unsplash.com/photo-1604843885270-78a7df88ac0b?w=400&h=400&fit=crop',
       category: 'geometric',
       mood: 'zen',
       rating: 4.9,
@@ -67,8 +67,8 @@ const Shop = () => {
     },
     {
       id: 5,
-      name: 'Playful Forest Animals',
-      price: 45,
+      name: 'Forest Friends Collection',
+      price: 1299,
       image: 'https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=400&h=400&fit=crop',
       category: 'animals',
       mood: 'playful',
@@ -79,14 +79,87 @@ const Shop = () => {
     },
     {
       id: 6,
-      name: 'Zen Garden Stones',
-      price: 78,
+      name: 'Traditional Kimono Patterns',
+      price: 2199,
       image: 'https://images.unsplash.com/photo-1551038247-3d9af20df552?w=400&h=400&fit=crop',
-      category: 'geometric',
-      mood: 'zen',
+      category: 'traditional',
+      mood: 'artistic',
       rating: 4.6,
       reviews: 203,
-      description: 'Minimalist stone-inspired origami for meditation spaces',
+      description: 'Classic Japanese patterns folded into timeless art pieces',
+      inStock: true
+    },
+    {
+      id: 7,
+      name: 'Dragon Prosperity Set',
+      price: 5499,
+      originalPrice: 6999,
+      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop',
+      category: 'traditional',
+      mood: 'festive',
+      rating: 4.9,
+      reviews: 321,
+      description: 'Majestic dragon origami bringing luck and prosperity to your home',
+      inStock: true
+    },
+    {
+      id: 8,
+      name: 'Butterfly Garden',
+      price: 1699,
+      image: 'https://images.unsplash.com/photo-1486718448742-163732cd1544?w=400&h=400&fit=crop',
+      category: 'animals',
+      mood: 'romantic',
+      rating: 4.8,
+      reviews: 167,
+      description: 'Delicate butterfly collection in vibrant spring colors',
+      inStock: true
+    },
+    {
+      id: 9,
+      name: 'Geometric Mandala',
+      price: 2899,
+      image: 'https://images.unsplash.com/photo-1604843885270-78a7df88ac0b?w=400&h=400&fit=crop',
+      category: 'geometric',
+      mood: 'zen',
+      rating: 4.7,
+      reviews: 89,
+      description: 'Intricate mandala patterns for meditation and focus',
+      inStock: true
+    },
+    {
+      id: 10,
+      name: 'Festive Diwali Collection',
+      price: 3299,
+      image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop',
+      category: 'seasonal',
+      mood: 'festive',
+      rating: 4.9,
+      reviews: 245,
+      description: 'Bright and colorful origami perfect for Diwali celebrations',
+      inStock: true
+    },
+    {
+      id: 11,
+      name: 'Peacock Majesty',
+      price: 4799,
+      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop',
+      category: 'animals',
+      mood: 'artistic',
+      rating: 5.0,
+      reviews: 178,
+      description: 'Stunning peacock origami showcasing India\'s national bird',
+      inStock: true
+    },
+    {
+      id: 12,
+      name: 'Minimalist Crane Mobile',
+      price: 1599,
+      image: 'https://images.unsplash.com/photo-1486718448742-163732cd1544?w=400&h=400&fit=crop',
+      category: 'cranes',
+      mood: 'calming',
+      rating: 4.6,
+      reviews: 134,
+      description: 'Elegant hanging mobile with white paper cranes',
       inStock: true
     }
   ];
@@ -102,7 +175,8 @@ const Shop = () => {
     romantic: 'bg-origami-sakura text-pink-800',
     artistic: 'bg-origami-sage text-green-800',
     zen: 'bg-purple-100 text-purple-800',
-    playful: 'bg-yellow-100 text-yellow-800'
+    playful: 'bg-yellow-100 text-yellow-800',
+    festive: 'bg-orange-100 text-orange-800'
   };
 
   return (
@@ -119,8 +193,9 @@ const Shop = () => {
                 Origami Collection
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8 flex items-center justify-center gap-2">
               Discover handcrafted paper art that transforms spaces and touches souls
+              <IndianRupee className="h-5 w-5 text-origami-sage" />
             </p>
             
             {/* Search Bar */}
@@ -236,7 +311,7 @@ const Shop = () => {
                     {/* Sale Badge */}
                     {product.originalPrice && (
                       <div className="absolute top-4 left-4 bg-origami-sakura text-white px-2 py-1 rounded-full text-xs font-medium">
-                        Save ${product.originalPrice - product.price}
+                        Save ₹{product.originalPrice - product.price}
                       </div>
                     )}
 
@@ -289,12 +364,14 @@ const Shop = () => {
                     {/* Price */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
-                        <span className="text-xl font-semibold text-origami-sage">
-                          ${product.price}
+                        <span className="text-xl font-semibold text-origami-sage flex items-center">
+                          <IndianRupee className="h-4 w-4 mr-1" />
+                          {product.price}
                         </span>
                         {product.originalPrice && (
-                          <span className="text-sm text-gray-500 line-through">
-                            ${product.originalPrice}
+                          <span className="text-sm text-gray-500 line-through flex items-center">
+                            <IndianRupee className="h-3 w-3 mr-1" />
+                            {product.originalPrice}
                           </span>
                         )}
                       </div>

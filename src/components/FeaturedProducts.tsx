@@ -1,16 +1,16 @@
 
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Heart, Star } from 'lucide-react';
+import { Heart, Star, IndianRupee } from 'lucide-react';
 
 const FeaturedProducts = () => {
   const products = [
     {
       id: 1,
-      name: 'Serenity Garden Set',
-      price: 89,
-      originalPrice: 120,
-      image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=400&h=400&fit=crop',
+      name: 'Lotus Serenity Set',
+      price: 2499,
+      originalPrice: 3200,
+      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop',
       mood: 'Calming',
       rating: 4.9,
       reviews: 234,
@@ -18,9 +18,9 @@ const FeaturedProducts = () => {
     },
     {
       id: 2,
-      name: 'Romantic Cranes',
-      price: 156,
-      image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=400&fit=crop',
+      name: 'Golden Paper Cranes',
+      price: 4299,
+      image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop',
       mood: 'Romantic',
       rating: 5.0,
       reviews: 156,
@@ -28,9 +28,9 @@ const FeaturedProducts = () => {
     },
     {
       id: 3,
-      name: 'Sakura Dreams',
-      price: 67,
-      image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=400&h=400&fit=crop',
+      name: 'Sakura Blossom Dreams',
+      price: 1899,
+      image: 'https://images.unsplash.com/photo-1486718448742-163732cd1544?w=400&h=400&fit=crop',
       mood: 'Artistic',
       rating: 4.8,
       reviews: 189,
@@ -38,9 +38,9 @@ const FeaturedProducts = () => {
     },
     {
       id: 4,
-      name: 'Mountain Meditation',
-      price: 134,
-      image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=400&fit=crop',
+      name: 'Zen Mountain Landscape',
+      price: 3799,
+      image: 'https://images.unsplash.com/photo-1604843885270-78a7df88ac0b?w=400&h=400&fit=crop',
       mood: 'Zen',
       rating: 4.9,
       reviews: 298,
@@ -95,7 +95,7 @@ const FeaturedProducts = () => {
                 {/* Sale Badge */}
                 {product.originalPrice && (
                   <div className="absolute top-4 left-4 bg-origami-sakura text-white px-2 py-1 rounded-full text-xs font-medium">
-                    Save ${product.originalPrice - product.price}
+                    Save ₹{product.originalPrice - product.price}
                   </div>
                 )}
               </div>
@@ -137,12 +137,14 @@ const FeaturedProducts = () => {
                 {/* Price */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <span className="text-xl font-semibold text-origami-sage">
-                      ${product.price}
+                    <span className="text-xl font-semibold text-origami-sage flex items-center">
+                      <IndianRupee className="h-4 w-4 mr-1" />
+                      {product.price}
                     </span>
                     {product.originalPrice && (
-                      <span className="text-sm text-gray-500 line-through">
-                        ${product.originalPrice}
+                      <span className="text-sm text-gray-500 line-through flex items-center">
+                        <IndianRupee className="h-3 w-3 mr-1" />
+                        {product.originalPrice}
                       </span>
                     )}
                   </div>

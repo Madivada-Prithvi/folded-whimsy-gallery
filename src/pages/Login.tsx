@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Eye, EyeOff, ArrowLeft, Sparkles } from 'lucide-react';
+import { Eye, EyeOff, ArrowLeft, Sparkles, IndianRupee } from 'lucide-react';
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -17,7 +17,7 @@ const Login = () => {
     e.preventDefault();
     // Mock authentication - in real app would connect to backend
     console.log(isLogin ? 'Logging in...' : 'Signing up...', { email, password, name });
-    navigate('/');
+    navigate('/home');
   };
 
   return (
@@ -38,12 +38,6 @@ const Login = () => {
       </div>
 
       <div className="relative z-10 w-full max-w-md">
-        {/* Back Button */}
-        <Link to="/" className="inline-flex items-center text-gray-600 hover:text-origami-sage transition-colors mb-8">
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back to Home
-        </Link>
-
         <Card className="paper-card p-8">
           {/* Logo */}
           <div className="text-center mb-8">
@@ -56,8 +50,9 @@ const Login = () => {
             <h1 className="text-2xl font-light text-gray-800 mb-2">
               {isLogin ? 'Welcome Back' : 'Join Our Community'}
             </h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 flex items-center justify-center gap-1">
               {isLogin ? 'Fold your way back into creativity' : 'Begin your origami journey'}
+              <IndianRupee className="h-4 w-4 text-origami-sage" />
             </p>
           </div>
 
