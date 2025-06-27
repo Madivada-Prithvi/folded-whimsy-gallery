@@ -48,7 +48,7 @@ const FeaturedProducts = () => {
     }
   ];
 
-  const moo dColors = {
+  const moodColors = {
     Calming: 'bg-origami-sky text-blue-800',
     Romantic: 'bg-origami-sakura text-pink-800',
     Artistic: 'bg-origami-sage text-green-800',
