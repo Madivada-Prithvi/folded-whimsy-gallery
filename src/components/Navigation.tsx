@@ -50,17 +50,21 @@ const Navigation = () => {
             <Button variant="ghost" size="sm" className="hidden md:flex">
               <Search className="h-4 w-4" />
             </Button>
-            <Button variant="ghost" size="sm">
-              <User className="h-4 w-4" />
-            </Button>
+            <Link to="/login">
+              <Button variant="ghost" size="sm">
+                <User className="h-4 w-4" />
+              </Button>
+            </Link>
             <Button variant="ghost" size="sm" className="relative">
               <Heart className="h-4 w-4" />
               <span className="absolute -top-1 -right-1 h-3 w-3 bg-origami-sakura rounded-full text-xs flex items-center justify-center text-white">2</span>
             </Button>
-            <Button variant="ghost" size="sm" className="relative">
-              <ShoppingBag className="h-4 w-4" />
-              <span className="absolute -top-1 -right-1 h-3 w-3 bg-origami-sage rounded-full text-xs flex items-center justify-center text-white">3</span>
-            </Button>
+            <Link to="/cart">
+              <Button variant="ghost" size="sm" className="relative">
+                <ShoppingBag className="h-4 w-4" />
+                <span className="absolute -top-1 -right-1 h-3 w-3 bg-origami-sage rounded-full text-xs flex items-center justify-center text-white">3</span>
+              </Button>
+            </Link>
 
             {/* Mobile menu button */}
             <Button
@@ -93,6 +97,12 @@ const Navigation = () => {
                   <Search className="h-4 w-4 mr-2" />
                   Search
                 </Button>
+                <Link to="/login" className="block mt-2">
+                  <Button variant="ghost" size="sm" className="w-full justify-start">
+                    <User className="h-4 w-4 mr-2" />
+                    Sign In
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Star } from 'lucide-react';
 
@@ -42,13 +43,17 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
-          <Button size="lg" className="origami-button group min-w-[200px]">
-            Explore Collection
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
-          <Button variant="outline" size="lg" className="min-w-[200px] border-origami-sage text-origami-sage hover:bg-origami-sage hover:text-white">
-            Watch Our Story
-          </Button>
+          <Link to="/shop">
+            <Button size="lg" className="origami-button group min-w-[200px]">
+              Explore Collection
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
+          <Link to="/stories">
+            <Button variant="outline" size="lg" className="min-w-[200px] border-origami-sage text-origami-sage hover:bg-origami-sage hover:text-white">
+              Discover Stories
+            </Button>
+          </Link>
         </div>
 
         {/* Stats */}

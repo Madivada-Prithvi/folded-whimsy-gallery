@@ -1,11 +1,12 @@
 
+import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import FeaturedProducts from '@/components/FeaturedProducts';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Star, ArrowRight, Users, BookOpen, Sparkles } from 'lucide-react';
+import { Star, ArrowRight, Users, BookOpen, Sparkles, ShoppingBag, Heart, Calendar } from 'lucide-react';
 
 const Index = () => {
   return (
@@ -39,10 +40,12 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <Button size="lg" className="origami-button group">
-                  Start Learning
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <Link to="/learn">
+                  <Button size="lg" className="origami-button group">
+                    Start Learning
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </div>
               
               <div className="relative">
@@ -82,32 +85,77 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-4">Artist Showcase</h3>
                 <p className="text-gray-600 mb-6">Feature your work and get discovered by art lovers worldwide</p>
-                <Button variant="outline" className="border-origami-sakura text-origami-sakura hover:bg-origami-sakura hover:text-white">
-                  Share Your Art
-                </Button>
+                <Link to="/community">
+                  <Button variant="outline" className="border-origami-sakura text-origami-sakura hover:bg-origami-sakura hover:text-white">
+                    Share Your Art
+                  </Button>
+                </Link>
               </Card>
 
               <Card className="paper-card p-8 text-center hover:scale-105 transition-transform duration-300">
                 <div className="w-16 h-16 bg-gradient-to-br from-origami-sage to-origami-sky rounded-full flex items-center justify-center mx-auto mb-6">
                   <BookOpen className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Daily Challenges</h3>
-                <p className="text-gray-600 mb-6">Improve your skills with guided daily folding challenges</p>
-                <Button variant="outline" className="border-origami-sage text-origami-sage hover:bg-origami-sage hover:text-white">
-                  Take Challenge
-                </Button>
+                <h3 className="text-xl font-semibold mb-4">Cultural Stories</h3>
+                <p className="text-gray-600 mb-6">Discover the rich history and meaning behind each fold</p>
+                <Link to="/stories">
+                  <Button variant="outline" className="border-origami-sage text-origami-sage hover:bg-origami-sage hover:text-white">
+                    Explore Stories
+                  </Button>
+                </Link>
               </Card>
 
               <Card className="paper-card p-8 text-center hover:scale-105 transition-transform duration-300">
                 <div className="w-16 h-16 bg-gradient-to-br from-origami-sky to-origami-sakura rounded-full flex items-center justify-center mx-auto mb-6">
                   <Sparkles className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Cultural Stories</h3>
-                <p className="text-gray-600 mb-6">Discover the rich history and meaning behind each fold</p>
-                <Button variant="outline" className="border-origami-sky text-origami-sky hover:bg-origami-sky hover:text-white">
-                  Explore Stories
-                </Button>
+                <h3 className="text-xl font-semibold mb-4">Daily Challenges</h3>
+                <p className="text-gray-600 mb-6">Improve your skills with guided daily folding challenges</p>
+                <Link to="/community">
+                  <Button variant="outline" className="border-origami-sky text-origami-sky hover:bg-origami-sky hover:text-white">
+                    Take Challenge
+                  </Button>
+                </Link>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Quick Actions */}
+        <section className="py-16 bg-origami-cream/50">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <Link to="/shop" className="group">
+                <Card className="paper-card p-6 text-center hover:scale-105 transition-transform duration-300">
+                  <ShoppingBag className="h-12 w-12 text-origami-sage mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-semibold text-gray-800 mb-2">Shop Collection</h3>
+                  <p className="text-sm text-gray-600">Browse our curated origami art</p>
+                </Card>
+              </Link>
+
+              <Link to="/learn" className="group">
+                <Card className="paper-card p-6 text-center hover:scale-105 transition-transform duration-300">
+                  <BookOpen className="h-12 w-12 text-origami-sky mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-semibold text-gray-800 mb-2">Learn & Create</h3>
+                  <p className="text-sm text-gray-600">Master new folding techniques</p>
+                </Card>
+              </Link>
+
+              <Link to="/community" className="group">
+                <Card className="paper-card p-6 text-center hover:scale-105 transition-transform duration-300">
+                  <Heart className="h-12 w-12 text-origami-sakura mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-semibold text-gray-800 mb-2">Join Community</h3>
+                  <p className="text-sm text-gray-600">Connect with fellow artists</p>
+                </Card>
+              </Link>
+
+              <Link to="/subscription" className="group">
+                <Card className="paper-card p-6 text-center hover:scale-105 transition-transform duration-300">
+                  <Calendar className="h-12 w-12 text-origami-sage mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-semibold text-gray-800 mb-2">Monthly Box</h3>
+                  <p className="text-sm text-gray-600">Get monthly origami projects</p>
+                </Card>
+              </Link>
             </div>
           </div>
         </section>
@@ -156,9 +204,11 @@ const Index = () => {
               </Card>
             </div>
 
-            <Button size="lg" className="origami-button min-w-[200px]">
-              Start Your Journey
-            </Button>
+            <Link to="/subscription">
+              <Button size="lg" className="origami-button min-w-[200px]">
+                Start Your Journey
+              </Button>
+            </Link>
           </div>
         </section>
       </main>
